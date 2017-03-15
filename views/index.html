@@ -1,0 +1,25 @@
+<!DOCTYPE html>	
+<html>
+	<head>
+		<script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+		<title>a-Frame</title>
+	</head>
+	<body>
+		<a-scene>
+			<a-assets>
+				<img id="texture" src="img/Knockdown_texture.jpg"/>
+			</a-assets>
+			<a-box id="box" ref="box" width="3" height="2" depth="2"
+				position="0 0 0"
+				rotation="0 45 0"
+				src="#texture">
+				<a-animation attribute="rotation" begin="click" repeat="0" to="0 360 0"></a-animation>
+				<a-animation attribute="scale" begin="mouseenter" to="2 2 2"></a-animation>
+				<a-animation attribute="scale" begin="mouseleave" to="1 1 1"></a-animation>
+			</a-box>
+			<a-camera position="0 2 7">
+				<a-cursor color="red" />
+			</a-camera>
+		</a-scene>
+	</body>
+</html>
