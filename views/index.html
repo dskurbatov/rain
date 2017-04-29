@@ -6,20 +6,21 @@
 	</head>
 	<body>
 		<a-scene>
-			<a-assets>
-				<img id="texture" src="img/Knockdown_texture.jpg"/>
-			</a-assets>
-			<a-box id="box" ref="box" width="3" height="2" depth="2"
-				position="0 0 0"
-				rotation="0 45 0"
-				src="#texture">
-				<a-animation attribute="rotation" begin="click" repeat="0" to="0 360 0"></a-animation>
-				<a-animation attribute="scale" begin="mouseenter" to="2 2 2"></a-animation>
-				<a-animation attribute="scale" begin="mouseleave" to="1 1 1"></a-animation>
-			</a-box>
-			<a-camera position="0 2 7">
-				<a-cursor color="red" />
-			</a-camera>
-		</a-scene>
+      <a-assets>
+        <a-asset-item id="object" src="./modules/cat.obj"></a-asset-item>
+        <a-asset-item id="materials" src="./modules/cat.mtl"></a-asset-item>
+      </a-assets>
+        <a-obj-model src="#object" mtl="#materials"></a-obj-model>
+      	<a-sphere position="0 3.4 1" radius="1.25" color="#EF2D5E"></a-sphere>
+      	<a-box position="0 0.5 1" rotation="0 45 0" width="1" height="1" depth="1"  color="#4CC3D9"></a-box>
+      	<a-cylinder position="0 1.5 1" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+      	<a-plane rotation="-90 0 0" width="5" height="5" color="#7BC8A4"></a-plane>
+
+      	<a-sky src="./img/car.jpg" color="#ECECEC"></a-sky>
+      	<a-entity position="0 10 19">
+        	<a-camera></a-camera>
+      	</a-entity>
+    </a-scene>
+		<!--<script src="js/main.js"></script>-->
 	</body>
 </html>
