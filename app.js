@@ -6,7 +6,7 @@ app.set('views', __dirname + '/views');
 app.use('/img', express.static(__dirname + "/views/img"));
 app.use('/js', express.static(__dirname + "/views/js"));
 app.use('/modules', express.static(__dirname + "/views/modules"));
-app.use('/css', express.static(__dirname + '/views/css'))
+app.use('/css', express.static(__dirname + '/views/css'));
 
 app.get('/', function (req, res) {
 	res.sendFile('index.html', {
