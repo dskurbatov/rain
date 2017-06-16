@@ -20,4 +20,10 @@ app.get('/plane', function (req, res) {
 	});
 });
 
+app.get('/object', (req, res) => {
+	res.sendFile('object.html', {
+		root: './views'
+	});
+});
+
 app.listen(3000);
