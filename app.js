@@ -6,6 +6,7 @@ app.set('views', __dirname + '/views');
 app.use('/img', express.static(__dirname + "/views/img"));
 app.use('/js', express.static(__dirname + "/views/js"));
 app.use('/modules', express.static(__dirname + "/views/modules"));
+app.use('/css', express.static(__dirname + '/views/css'));
 
 app.get('/', function (req, res) {
 	res.sendFile('index.html', {
@@ -15,6 +16,12 @@ app.get('/', function (req, res) {
 
 app.get('/plane', function (req, res) {
 	res.sendFile('plane.html', {
+		root: './views'
+	});
+});
+
+app.get('/object', (req, res) => {
+	res.sendFile('object.html', {
 		root: './views'
 	});
 });
